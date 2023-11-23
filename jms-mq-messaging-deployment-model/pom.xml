@@ -36,9 +36,9 @@ You should have received a copy of the GNU Lesser General Public License along w
             <?tag asset?>
         </dependency>
         <dependency>
-            <groupId>com.braintribe.gm</groupId>
+            <groupId>tribefire.cortex</groupId>
             <artifactId>jms-messaging-deployment-model</artifactId>
-            <version>${V.com.braintribe.gm}</version>
+            <version>${V.tribefire.cortex}</version>
             <?tag asset?>
         </dependency>
     </dependencies>

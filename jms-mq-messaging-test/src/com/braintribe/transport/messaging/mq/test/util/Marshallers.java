@@ -15,15 +15,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import com.braintribe.codec.json.genericmodel.GenericModelJsonCodec;
 import com.braintribe.codec.marshaller.api.Marshaller;
 import com.braintribe.codec.marshaller.api.MarshallerRegistry;
 import com.braintribe.codec.marshaller.api.MarshallerRegistryEntry;
 import com.braintribe.codec.marshaller.bin.BinMarshaller;
-import com.braintribe.codec.marshaller.json.JsonMarshaller;
+import com.braintribe.codec.marshaller.json.JsonStreamMarshaller;
 import com.braintribe.codec.marshaller.sax.SaxMarshaller;
 import com.braintribe.codec.marshaller.xml.XmlMarshaller;
-import com.braintribe.model.generic.GMF;
 
 public class Marshallers {
 	
@@ -49,11 +47,7 @@ public class Marshallers {
 	}
 	
 	private static Marshaller createJsonMarshaller() {
-		JsonMarshaller jsonMarshaller = new JsonMarshaller();
-		GenericModelJsonCodec<Object> jsonDelegateCodec = new GenericModelJsonCodec<Object>();
-		jsonDelegateCodec.setType(GMF.getTypeReflection().getBaseType());
-		jsonDelegateCodec.setGenericModelTypeReflection(GMF.getTypeReflection());
-		jsonMarshaller.setJsonCodec(jsonDelegateCodec);
+		JsonStreamMarshaller jsonMarshaller = new JsonStreamMarshaller();
 		return jsonMarshaller;
 	}
 	
