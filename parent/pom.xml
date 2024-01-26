@@ -19,10 +19,7 @@ You should have received a copy of the GNU Lesser General Public License along w
         <V.com.braintribe.mq>[1.0,1.1)</V.com.braintribe.mq>
         <V.tribefire.cortex>[3.0,3.1)</V.tribefire.cortex>
         <V.com.braintribe.gm>[2.0,2.1)</V.com.braintribe.gm>
-        <V.com.braintribe.gm.spring>[2.0,2.1)</V.com.braintribe.gm.spring>
-        <V.com.braintribe.spring>[2.0,2.1)</V.com.braintribe.spring>
         <V.com.ibm.mq>9.1.0.0</V.com.ibm.mq>
-        <V.org.springframework>4.3.10.RELEASE</V.org.springframework>
     </properties>
     <licenses>
         <license>
