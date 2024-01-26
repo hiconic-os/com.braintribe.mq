@@ -11,13 +11,23 @@
 // ============================================================================
 package com.braintribe.transport.messaging.mq.test;
 
-import org.junit.Ignore;
+import com.braintribe.transport.messaging.mq.test.config.TestConfiguration;
 
-import com.braintribe.transport.messaging.mq.test.config.Configurator;
-
-@Ignore
 public class ConfigurationHolder {
 
-	public static Configurator configurator = null;
+	public static TestConfiguration testConfiguration = testConfiguration();
+
+	// NOTE: This used to be configured via Spring. I replaced it with java, but didn't test it (not sure what it actually needs to run).
+	private static TestConfiguration testConfiguration() {
+		TestConfiguration result = new TestConfiguration();
+		result.setHost("10.202.1.1");
+		result.setPort(1414);
+		result.setChannel("SYSTEM.ADMIN.SVRCONN");
+		result.setQueueManager("MQE");
+		result.setQueueName("tf.dev.queue.remoteToDbl");
+		result.setTopicName("tf.dev.topic.heartbeat");
+
+		return result;
+	}
 
 }

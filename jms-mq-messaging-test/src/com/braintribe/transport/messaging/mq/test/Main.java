@@ -15,7 +15,6 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 	
-		BasicJmsTests.initTests();
 		BasicJmsTests tests = new BasicJmsTests();
 		
 //		System.out.println("connectTest");
@@ -52,9 +51,6 @@ public class Main {
 		tests.initialize();
 		tests.testTopicMultithreadedMassive();
 		tests.destroy();
-
-
-		BasicJmsTests.shutdown();
 	}
 	
 }

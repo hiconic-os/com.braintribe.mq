@@ -25,7 +25,7 @@ public class JmsMqMessagingConnectionProvider {
 
 	public static final JmsMqMessagingConnectionProvider instance = new JmsMqMessagingConnectionProvider();
 
-	private MessagingConnectionProvider<? extends MessagingConnection> messagingConnectionProvider;
+	private final MessagingConnectionProvider<? extends MessagingConnection> messagingConnectionProvider;
 
 	private JmsMqMessagingConnectionProvider() {
 		messagingConnectionProvider = getMessagingConnectionProvider();
@@ -50,7 +50,7 @@ public class JmsMqMessagingConnectionProvider {
 	protected com.braintribe.model.messaging.expert.Messaging queryDenotationType(String name) {
 
 		try {
-			TestConfiguration testConfiguration = ConfigurationHolder.configurator.getContext().getBean("testConfiguration", TestConfiguration.class);
+			TestConfiguration testConfiguration = ConfigurationHolder.testConfiguration;
 			if (testConfiguration == null) {
 				throw new RuntimeException("Could not find bean 'testConfiguration'");
 			}

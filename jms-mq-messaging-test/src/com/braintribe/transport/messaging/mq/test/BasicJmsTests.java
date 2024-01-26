@@ -22,10 +22,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -45,7 +43,6 @@ import com.braintribe.transport.messaging.api.MessagingException;
 import com.braintribe.transport.messaging.api.MessagingSession;
 import com.braintribe.transport.messaging.jms.JmsMqMessaging;
 import com.braintribe.transport.messaging.jms.JmsMqSession;
-import com.braintribe.transport.messaging.mq.test.config.Configurator;
 import com.braintribe.transport.messaging.mq.test.config.TestConfiguration;
 import com.braintribe.transport.messaging.mq.test.util.TestUtilities;
 import com.braintribe.transport.messaging.mq.test.worker.MessageReceiver;
@@ -65,15 +62,10 @@ public class BasicJmsTests {
 	protected List<MessagingSession> sessions = new ArrayList<MessagingSession>();
 	protected List<MessagingConnection> connections = new ArrayList<MessagingConnection>();
 
-	@BeforeClass
-	public static void initTests() throws Exception {
-		ConfigurationHolder.configurator = new Configurator();
-	}
-	
 	@Before
 	public void initialize() throws Exception {
 
-		this.testConfiguration = ConfigurationHolder.configurator.getContext().getBean("testConfiguration", TestConfiguration.class);
+		this.testConfiguration = ConfigurationHolder.testConfiguration;
 		if (this.testConfiguration == null) {
 			throw new Exception("Could not find bean 'testConfiguration'");
 		}
@@ -93,11 +85,6 @@ public class BasicJmsTests {
 
 	}
 	
-	@AfterClass
-	public static void shutdown() {
-		ConfigurationHolder.configurator.close();
-	}
-
 	@After
 	public void destroy() throws Exception {
 

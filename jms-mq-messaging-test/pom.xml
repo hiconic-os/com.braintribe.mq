@@ -40,26 +40,6 @@ You should have received a copy of the GNU Lesser General Public License along w
             <version>${V.com.braintribe.gm}</version>
         </dependency>
         <dependency>
-            <groupId>com.braintribe.gm.spring</groupId>
-            <artifactId>gm-core-spring-support</artifactId>
-            <version>${V.com.braintribe.gm.spring}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.braintribe.spring</groupId>
-            <artifactId>spring-loader</artifactId>
-            <version>${V.com.braintribe.spring}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.braintribe.spring</groupId>
-            <artifactId>spring-support</artifactId>
-            <version>${V.com.braintribe.spring}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${V.org.springframework}</version>
-        </dependency>
-        <dependency>
             <groupId>com.braintribe.gm</groupId>
             <artifactId>generic-model-json-codec</artifactId>
             <version>${V.com.braintribe.gm}</version>
